@@ -1,0 +1,116 @@
+<div>
+  <div>
+    <h1>
+      List of all daily spreads
+    </h1>
+  </div>
+</div>
+
+<hr>
+
+<div>
+  <div>
+    <h2>
+      Add a new daily spread
+    </h2>
+
+    <form action="/insert_daily_spread" method="post">
+      <div>
+        <label for="tarot_card_id_box">
+          Tarot card
+        </label>
+
+        <input type="text" id="tarot_card_id_box" name="query_tarot_card_id">
+      </div>
+
+      <div>
+        <label for="user_id_box">
+          User
+        </label>
+
+        <input type="text" id="user_id_box" name="query_user_id">
+      </div>
+
+      <div>
+        <input type="checkbox" id="sent_box" name="query_sent" value="1">
+
+        <label for="sent_box">Sent</label>
+      </div>
+
+      <button>
+        Create daily spread
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
+<div>
+  <div>
+    <table>
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Tarot card
+        </th>
+
+        <th>
+          User
+        </th>
+
+        <th>
+          Sent
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @list_of_daily_spreads.each do |a_daily_spread| %>
+      <tr>
+        <td>
+          <%= a_daily_spread.id %>
+        </td>
+
+        <td>
+          <%= a_daily_spread.tarot_card_id %>
+        </td>
+
+        <td>
+          <%= a_daily_spread.user_id %>
+        </td>
+
+        <td>
+          <%= a_daily_spread.sent %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(a_daily_spread.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(a_daily_spread.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/daily_spreads/<%= a_daily_spread.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<hr>

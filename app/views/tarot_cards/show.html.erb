@@ -1,0 +1,116 @@
+<div>
+  <div>
+    <h1>
+      Tarot card #<%= @the_tarot_card.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/tarot_cards">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_tarot_card/<%= @the_tarot_card.id %>">
+          Delete tarot card
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Name
+      </dt>
+      <dd>
+        <%= @the_tarot_card.name %>
+      </dd>
+
+      <dt>
+        Image
+      </dt>
+      <dd>
+        <%= @the_tarot_card.image %>
+      </dd>
+
+      <dt>
+        Description
+      </dt>
+      <dd>
+        <%= @the_tarot_card.description %>
+      </dd>
+
+      <dt>
+        Arcana
+      </dt>
+      <dd>
+        <%= @the_tarot_card.arcana %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_tarot_card.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_tarot_card.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit tarot card
+    </h2>
+
+    <form action="/modify_tarot_card/<%= @the_tarot_card.id %>"  method="post" >
+      <div>
+        <label for="name_box">
+          Name
+        </label>
+
+        <input type="text" id="name_box" name="query_name" value="<%= @the_tarot_card.name %>">
+      </div>
+
+      <div>
+        <label for="image_box">
+          Image
+        </label>
+
+        <input type="text" id="image_box" name="query_image" value="<%= @the_tarot_card.image %>">
+      </div>
+
+      <div>
+        <label for="description_box">
+          Description
+        </label>
+
+        <textarea id="description_box" name="query_description"><%= @the_tarot_card.description %></textarea>
+      </div>
+
+      <div>
+        <label for="arcana_box">
+          Arcana
+        </label>
+
+        <input type="text" id="arcana_box" name="query_arcana" value="<%= @the_tarot_card.arcana %>">
+      </div>
+
+      <button>
+        Update tarot card
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>

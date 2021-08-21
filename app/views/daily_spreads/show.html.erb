@@ -1,0 +1,101 @@
+<div>
+  <div>
+    <h1>
+      Daily spread #<%= @the_daily_spread.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/daily_spreads">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_daily_spread/<%= @the_daily_spread.id %>">
+          Delete daily spread
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Tarot card
+      </dt>
+      <dd>
+        <%= @the_daily_spread.tarot_card_id %>
+      </dd>
+
+      <dt>
+        User
+      </dt>
+      <dd>
+        <%= @the_daily_spread.user_id %>
+      </dd>
+
+      <dt>
+        Sent
+      </dt>
+      <dd>
+        <%= @the_daily_spread.sent %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_daily_spread.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_daily_spread.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit daily spread
+    </h2>
+
+    <form action="/modify_daily_spread/<%= @the_daily_spread.id %>"  method="post" >
+      <div>
+        <label for="tarot_card_id_box">
+          Tarot card
+        </label>
+
+        <input type="text" id="tarot_card_id_box" name="query_tarot_card_id" value="<%= @the_daily_spread.tarot_card_id %>">
+      </div>
+
+      <div>
+        <label for="user_id_box">
+          User
+        </label>
+
+        <input type="text" id="user_id_box" name="query_user_id" value="<%= @the_daily_spread.user_id %>">
+      </div>
+
+      <div>
+        <input type="checkbox" id="sent_box" name="query_sent" value="1" <%= "checked" if @the_daily_spread.sent %>>
+
+        <label for="sent_box">
+            Sent
+        </label>
+      </div>
+
+      <button>
+        Update daily spread
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>

@@ -1,0 +1,134 @@
+<div>
+  <div>
+    <h1>
+      List of all tarot cards
+    </h1>
+  </div>
+</div>
+
+<hr>
+
+<div>
+  <div>
+    <h2>
+      Add a new tarot card
+    </h2>
+
+    <form action="/insert_tarot_card" method="post">
+      <div>
+        <label for="name_box">
+          Name
+        </label>
+
+        <input type="text" id="name_box" name="query_name">
+      </div>
+
+      <div>
+        <label for="image_box">
+          Image
+        </label>
+
+        <input type="text" id="image_box" name="query_image">
+      </div>
+
+      <div>
+        <label for="description_box">
+          Description
+        </label>
+
+        <textarea id="description_box" name="query_description" rows="3"></textarea>
+      </div>
+
+      <div>
+        <label for="arcana_box">
+          Arcana
+        </label>
+
+        <input type="text" id="arcana_box" name="query_arcana">
+      </div>
+
+      <button>
+        Create tarot card
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
+<div>
+  <div>
+    <table>
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Name
+        </th>
+
+        <th>
+          Image
+        </th>
+
+        <th>
+          Description
+        </th>
+
+        <th>
+          Arcana
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @list_of_tarot_cards.each do |a_tarot_card| %>
+      <tr>
+        <td>
+          <%= a_tarot_card.id %>
+        </td>
+
+        <td>
+          <%= a_tarot_card.name %>
+        </td>
+
+        <td>
+          <%= a_tarot_card.image %>
+        </td>
+
+        <td>
+          <%= a_tarot_card.description %>
+        </td>
+
+        <td>
+          <%= a_tarot_card.arcana %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(a_tarot_card.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(a_tarot_card.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/tarot_cards/<%= a_tarot_card.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<hr>
