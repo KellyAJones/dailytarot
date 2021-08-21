@@ -58,3 +58,13 @@ class TarotCardsController < ApplicationController
     redirect_to("/tarot_cards", { :notice => "Tarot card deleted successfully."} )
   end
 end
+
+
+# enum
+# enum({ :arcana => { :major => 0, :minor => 1 } })
+
+# direct associations
+# has_many(:daily_spreads, { :dependent => :destroy })
+
+# indirect associations 
+# has_many(:users, { :through => :daily_spreads, :source => :user })

@@ -56,3 +56,11 @@ class DailySpreadsController < ApplicationController
     redirect_to("/daily_spreads", { :notice => "Daily spread deleted successfully."} )
   end
 end
+
+
+# direct associations
+
+# belongs_to(:user, { :counter_cache => true })
+# belongs_to(:tarot_card)
+
+
