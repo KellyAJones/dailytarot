@@ -3,7 +3,7 @@
 # Table name: tarot_cards
 #
 #  id          :integer          not null, primary key
-#  arcana      :integer
+#  arcana      :string
 #  description :text
 #  image       :string
 #  name        :string
