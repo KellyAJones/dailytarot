@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
 
+ # HOME
+
+ get("/", { :controller => "application", :action => "homepage" })
+ #get("/tarot_library", { :controller => " ", :action => " " })       
+ #get("/saved_readings", { :controller => " ", :action => " " })  
 
 
   # Routes for the Daily spread resource:
