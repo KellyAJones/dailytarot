@@ -47,7 +47,7 @@ The Minor Arcana includes four "suits" that each has a theme. Each suit is numbe
 
 <table border="1">
   <tr>
-    <td><#%= TarotCard.where( :id => 0).fetch(name)%>
+    <td>Card
 </td>
     <td>Card</td>
     <td>Card</td>
@@ -89,10 +89,10 @@ The Minor Arcana includes four "suits" that each has a theme. Each suit is numbe
 <h4>The Minor Arcana</h4>
 <table border="1">
  <tr>
-    <td>Pentacles</td>
-    <td>Wands</td>
-    <td>Cups</td>
-    <td>Swords</td>
+    <td> <b> Pentacles </b></td>
+     <td> <b> Wands </b></td>
+      <td> <b> Cups </b></td>
+       <td> <b> Swords </b></td>
   </tr>
   <tr>
     <td>Card</td>
@@ -184,52 +184,6 @@ The Minor Arcana includes four "suits" that each has a theme. Each suit is numbe
 You can read more about learning to read tarot cards <a href="https://www.nytimes.com/2021/04/01/style/self-care/tarot-guide-for-beginners.html">here</a>. 
 
 <hr>
-
-<div>
-  <div>
-    <h2>
-    Add a new tarot card
-    </h2>
-
-    <form action="/insert_tarot_card" method="post">
-      <div>
-        <label for="name_box">
-          Name
-        </label>
-
-        <input type="text" id="name_box" name="query_name">
-      </div>
-
-      <div>
-        <label for="image_box">
-          Image
-        </label>
-
-        <input type="text" id="image_box" name="query_image">
-      </div>
-
-      <div>
-        <label for="description_box">
-          Description
-        </label>
-
-        <textarea id="description_box" name="query_description" rows="3"></textarea>
-      </div>
-
-      <div>
-        <label for="arcana_box">
-          Arcana
-        </label>
-
-        <input type="text" id="arcana_box" name="query_arcana">
-      </div>
-
-      <button>
-        Create tarot card
-      </button>
-    </form>
-  </div>
-</div>
 
 <hr>
 <div>
