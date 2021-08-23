@@ -2,7 +2,7 @@ class TarotCardsController < ApplicationController
   def index
     @tarot_cards = TarotCard.all
 
-  
+    
 
     render({ :template => "tarot_cards/index.html.erb" })
   end

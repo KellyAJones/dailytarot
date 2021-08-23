@@ -45,7 +45,26 @@ The Minor Arcana includes four "suits" that each has a theme. Each suit is numbe
 <hr>
 <h4>The Major Arcana</h4>
 
-<i>  NEED TO FIX: Cards need to populate and link to the individual card page - cell should show name, image, and more detail link </i>
+<%# <i>  NEED TO FIX: Cards need to populate and link to the individual card page - cell should show name, image, and more detail link </i> %>
+
+
+      
+       
+
+<div>
+  <% @tarot_cards.each_slice(4) do |the_group_of_cards| %>
+  <div class="row">
+    <% the_group_of_cards.each do |the_card| %>
+
+    <div class="col-3">
+    <%= the_card.name %>
+    </div>
+    
+     <% end %>
+  </div>
+   <% end %>
+</div>
+
 
 <table border="1">
   <tr>
