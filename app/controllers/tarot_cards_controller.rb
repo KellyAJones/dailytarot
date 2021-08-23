@@ -1,14 +1,8 @@
 class TarotCardsController < ApplicationController
   def index
-    tarot_cards = TarotCard.all
+    @tarot_cards = TarotCard.all
 
-    #@list_of_tarot_cards = matching_tarot_cards.order({ :created_at => :desc })
-
-    #the_id = params.fetch("path_id")
-
-    #matching_tarot_cards = TarotCard.where({ :id => the_id })
-
-    #@the_tarot_card = matching_tarot_cards.at(0)
+  
 
     render({ :template => "tarot_cards/index.html.erb" })
   end

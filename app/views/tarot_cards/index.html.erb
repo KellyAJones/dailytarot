@@ -49,8 +49,16 @@ The Minor Arcana includes four "suits" that each has a theme. Each suit is numbe
 
 <table border="1">
   <tr>
-    <td>Card
-</td>
+    <td> 
+    <b>
+    <%= @tarot_cards.where( :id => 78).at(0).fetch( :name) %>
+    </b>
+    <p></p>
+    <button> <a href="/tarot_cards/78">
+    Details 
+
+    </button>
+  </td>
     <td>Card</td>
     <td>Card</td>
     <td>Card</td>

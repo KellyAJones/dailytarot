@@ -3,6 +3,7 @@
 # Table name: daily_spreads
 #
 #  id            :integer          not null, primary key
+#  reflection    :text
 #  sent          :boolean
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
