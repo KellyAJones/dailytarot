@@ -87,9 +87,3 @@ class UserAuthenticationController < ApplicationController
 end
 
 
-
-# direct associations
-# has_many(:daily_spreads, { :dependent => :destroy })
-
-# indirect associations 
-# has_many(:tarot_cards, { :through => :daily_spreads, :source => :tarot_card })

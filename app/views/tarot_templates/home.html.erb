@@ -1,6 +1,4 @@
 <h3> Welcome to Daily Tarot! </h3>
-<%# Code for design %>
-<%# <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/solar/bootstrap.min.css" integrity="sha384-NCwXci5f5ZqlDw+m7FwZSAwboa0svoPPylIW3Nf+GBDsyVum+yArYnaFLE9UDzLd" crossorigin="anonymous"> %>
 
 <table border="0">
   <tr>
@@ -15,7 +13,7 @@ You can choose to visit this site to pull a card each morning, or you can have y
 Either way, you can view your daily readings in your own <a href="/daily_spreads/"> Daily Reading Database</a>. You can also explore all the tarot cards and their meanings in our <a href="/tarot_cards/"> Tarot Card Library</a>.
 <hr> 
 
-<i>  NEED TO FIX: Form should populate name and phone number for signed in user; form texts a daily random card each day at 8am and stores it in the DB for that user</i>
+<i>  NEED TO FIX: Form should populate name and phone number for signed in user; form texts a daily random card each day at 8am and stores it in the DB for that user (can it take a reply back?)</i>
 
 <p> </p>
  <h5>
@@ -60,9 +58,13 @@ Close your eyes and take a few deep breaths and think about the day ahead.
 
 When you're ready, click the button below to generate your daily card.
 
+
 <p> </p>
+<form action="/insert_daily_spread" method="post" >
+
 <button> Select your daily card
 </button>
+</form>
   <hr>
     </td>
     <td>
@@ -75,5 +77,13 @@ When you're ready, click the button below to generate your daily card.
 </table>
 
 
-<#img src="https://images.unsplash.com/photo-1600430188203-bbb8dac79646?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80">
-<#img src="https://images.unsplash.com/photo-1600429770067-380e847a6c86?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80">
+<%# <#img src="https://images.unsplash.com/photo-1600430188203-bbb8dac79646?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"> %>
+<%# <#img src="https://images.unsplash.com/photo-1600429770067-380e847a6c86?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"> %>
+
+
+<%# 
+Get rid of routes that I don't need (join table routes) - aren't adding anythign to the application
+Forms that are showing updated/at, raw id numbers, etc.
+(make sure you can't see details you don't want to see - no raw id numbers)
+Nice to format time (dates, time dot strftime foragoodstrftime website)
+redirects - take to the card not back to the join table or record, daily reading should take you to the card and now the record  %>

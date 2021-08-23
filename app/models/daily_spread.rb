@@ -11,4 +11,9 @@
 #  user_id       :integer
 #
 class DailySpread < ApplicationRecord
-end
+
+  belongs_to(:user, { :counter_cache => true })
+
+  belongs_to(:tarot_card)
+
+end 

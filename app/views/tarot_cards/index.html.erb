@@ -45,11 +45,11 @@ The Minor Arcana includes four "suits" that each has a theme. Each suit is numbe
 <hr>
 <h4>The Major Arcana</h4>
 
-<%# <i>  NEED TO FIX: Cards need to populate and link to the individual card page - cell should show name, image, and more detail link </i> %>
+<hr>
+<h4>The Minor Arcana</h4>
 
+ <i>  NEED TO FIX: Cards need to populate in the right grids and link to the individual card page </i>
 
-      
-       
 
 <div>
   <% @tarot_cards.each_slice(4) do |the_group_of_cards| %>
@@ -66,148 +66,8 @@ The Minor Arcana includes four "suits" that each has a theme. Each suit is numbe
 </div>
 
 
-<table border="1">
-  <tr>
-    <td> 
-    <b>
-    <%= @tarot_cards.where( :id => 78).at(0).fetch( :name) %>
-    </b>
-    <p></p>
-    <button> <a href="/tarot_cards/78">
-    Details 
-
-    </button>
-  </td>
-    <td>Card</td>
-    <td>Card</td>
-    <td>Card</td>
-  </tr>
-  <tr>
-    <td>Card</td>
-    <td>Card</td>
-    <td>Card</td>
-    <td>Card</td>
-  </tr>
-  <tr>
-    <td>Card</td>
-    <td>Card</td>
-    <td>Card</td>
-    <td>Card</td>
-  </tr>
-  <tr>
-    <td>Card</td>
-    <td>Card</td>
-    <td>Card</td>
-    <td>Card</td>
-  </tr>
-  <tr>
-    <td>Card</td>
-    <td>Card</td>
-    <td>Card</td>
-    <td>Card</td>
-  </tr>
-  <tr>
-    <td></td>
-    <td>Card</td>
-    <td>Card</td>
-    <td></td>
-  </tr>
-</table>
-
-<hr>
-<h4>The Minor Arcana</h4>
-<table border="1">
- <tr>
-    <td> <b> Pentacles </b></td>
-     <td> <b> Wands </b></td>
-      <td> <b> Cups </b></td>
-       <td> <b> Swords </b></td>
-  </tr>
-  <tr>
-    <td>Card</td>
-    <td>Card</td>
-    <td>Card</td>
-    <td>Card</td>
-  </tr>
-  <tr>
-    <td>Card</td>
-    <td>Card</td>
-    <td>Card</td>
-    <td>Card</td>
-  </tr>
-  <tr>
-    <td>Card</td>
-    <td>Card</td>
-    <td>Card</td>
-    <td>Card</td>
-  </tr>
-  <tr>
-    <td>Card</td>
-    <td>Card</td>
-    <td>Card</td>
-    <td>Card</td>
-  </tr>
-  <tr>
-    <td>Card</td>
-    <td>Card</td>
-    <td>Card</td>
-    <td>Card</td>
-  </tr>
-  <tr>
-    <td>Card</td>
-    <td>Card</td>
-    <td>Card</td>
-    <td>Card</td>
-  </tr>
-  <tr>
-    <td>Card</td>
-    <td>Card</td>
-    <td>Card</td>
-    <td>Card</td>
-  </tr>
-  <tr>
-    <td>Card</td>
-    <td>Card</td>
-    <td>Card</td>
-    <td>Card</td>
-  </tr>
-  <tr>
-    <td>Card</td>
-    <td>Card</td>
-    <td>Card</td>
-    <td>Card</td>
-  </tr>
-  <tr>
-    <td>Card</td>
-    <td>Card</td>
-    <td>Card</td>
-    <td>Card</td>
-  </tr>
-  <tr>
-    <td>Card</td>
-    <td>Card</td>
-    <td>Card</td>
-    <td>Card</td>
-  </tr>
-  <tr>
-    <td>Card</td>
-    <td>Card</td>
-    <td>Card</td>
-    <td>Card</td>
-  </tr>
-  <tr>
-    <td>Card</td>
-    <td>Card</td>
-    <td>Card</td>
-    <td>Card</td>
-  </tr>
-  <tr>
-    <td>Card</td>
-    <td>Card</td>
-    <td>Card</td>
-    <td>Card</td>
-  </tr>
-</table>
+ <%# <a href="/tarot_cards/78"> %>
+    
 
 <hr>
 You can read more about learning to read tarot cards <a href="https://www.nytimes.com/2021/04/01/style/self-care/tarot-guide-for-beginners.html">here</a>. 

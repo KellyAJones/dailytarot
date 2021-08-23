@@ -19,13 +19,13 @@ class DailySpreadsController < ApplicationController
 
   def create
     the_daily_spread = DailySpread.new
-    the_daily_spread.tarot_card_id = params.fetch("query_tarot_card_id")
-    the_daily_spread.user_id = params.fetch("query_user_id")
+    the_daily_spread.tarot_card_id = TarotCard.all.sample.id
+    the_daily_spread.user_id = @current_user.id
     the_daily_spread.sent = params.fetch("query_sent", false)
 
     if the_daily_spread.valid?
       the_daily_spread.save
-      redirect_to("/daily_spreads", { :notice => "Daily spread created successfully." })
+      redirect_to("/tarot_cards/#{the_daily_spread.tarot_card_id}", { :notice => "Daily spread created successfully." })
     else
       redirect_to("/daily_spreads", { :notice => "Daily spread failed to create successfully." })
     end
@@ -58,9 +58,5 @@ class DailySpreadsController < ApplicationController
 end
 
 
-# direct associations
-
-# belongs_to(:user, { :counter_cache => true })
-# belongs_to(:tarot_card)
 
 
