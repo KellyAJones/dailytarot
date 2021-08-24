@@ -15,20 +15,27 @@
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Log In
           </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-  
-            <a href="/user_sign_up" class="dropdown-item">
-              Sign Up
-            </a>
-           <a href="/user_sign_in" class="dropdown-item">
-              Log In
-            </a>
-            <a href="/user_sign_out" class="dropdown-item">
-              Log Out
-            </a>
-          </div>
-        </li>
-        <li class="nav-item dropdown">
+          
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <% if @current_user == nil %>
+              <a href="/user_sign_up" class="dropdown-item">
+                Sign Up
+              </a>
+              <a href="/user_sign_in" class="dropdown-item">
+                  Log In
+                </a>
+              <% else %>
+                <a href="/edit_user_profile" class="dropdown-item">
+                  Edit Profile
+                </a>
+                <a href="/user_sign_out" class="dropdown-item">
+                  Log Out
+                </a>
+              <% end %>
+              </div>
+            
+      </li>
+      <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Resources
           </a>
