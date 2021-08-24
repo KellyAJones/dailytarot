@@ -25,7 +25,7 @@ class DailySpreadsController < ApplicationController
 
     if the_daily_spread.valid?
       the_daily_spread.save
-      redirect_to("/tarot_cards/#{the_daily_spread.tarot_card_id}", { :notice => "Daily spread created successfully." })
+      redirect_to("/tarot_cards/#{the_daily_spread.tarot_card_id}", { :notice => "This is your card of the day. You can visit 'Your Daily Readings' under 'Resources' to see past daily cards." })
     else
       redirect_to("/daily_spreads", { :notice => "Daily spread failed to create successfully." })
     end
