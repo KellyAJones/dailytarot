@@ -1,8 +1,10 @@
 class TarotCardsController < ApplicationController
   def index
-    @tarot_cards = TarotCard.all
+    tarot_cards = TarotCard.all
 
-  
+    @major_cards = tarot_cards.where({ :arcana => "Major"})
+
+    @minor_cards = tarot_cards.where({ :arcana => "Minor"})
   
 
     render({ :template => "tarot_cards/index.html.erb" })
