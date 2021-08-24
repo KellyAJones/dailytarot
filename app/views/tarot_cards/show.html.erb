@@ -1,7 +1,7 @@
 <div>
   <div>
     <h1>
-      <%= @the_tarot_card.name %> details
+      <%= @the_tarot_card.name %> 
     </h1>
 
     <div>
@@ -9,43 +9,22 @@
         <a href="/tarot_cards">
           Go back
         </a>
-      </div>
-
-    <dl>
-      <dt>
-        Name
-      </dt>
-      <dd>
-        <%= @the_tarot_card.name %>
-      </dd>
-
-      <dt>
-        Image
-      </dt>
-      <dd>
-        <%= @the_tarot_card.image %>
-      </dd>
-
-      <dt>
-        Description
-      </dt>
-      <dd>
-        <%= @the_tarot_card.description %>
-      </dd>
-
-      <dt>
-        Arcana
-      </dt>
-      <dd>
-        <%= @the_tarot_card.arcana %>
-      </dd>
-
-    
-    </dl>
   </div>
-</div>
 
 <hr>
+
+<div class="row">
+  <div class="col-4"> 
+    <img src="<%= @the_tarot_card.image %>" > 
+    
+  </div>
+  <div class="col-8">
+    <%= @the_tarot_card.description %>
+        <p></p>
+        <p></p>
+    <i> The <%= @the_tarot_card.name %> is a <%= @the_tarot_card.arcana %> Arcana card. </i>
+  </div>
+</div>
 
 
 <hr>

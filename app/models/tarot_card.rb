@@ -13,7 +13,6 @@
 #
 class TarotCard < ApplicationRecord
 
-  #enum({ :arcana => { :major => 0, :minor => 1 } })
 
   has_many(:daily_spreads, { :dependent => :destroy })
 
