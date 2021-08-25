@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_24_144649) do
+ActiveRecord::Schema.define(version: 2021_08_25_145502) do
 
   create_table "daily_spreads", force: :cascade do |t|
     t.integer "tarot_card_id"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2021_08_24_144649) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.text "reflection"
+    t.string "tarot_card_name"
   end
 
   create_table "tarot_cards", force: :cascade do |t|

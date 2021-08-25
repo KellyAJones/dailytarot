@@ -6,82 +6,56 @@
   </div>
 </div>
 
-<img src="https://images.unsplash.com/photo-1624274579716-8eeba7da39bb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-width = "400",
-height "450" >
-
-
-
-
 <hr>
 
-<i>  NEED TO FIX: Table should have a list of readings for that user </i>
 <div>
-  <div>
-    <table>
-      <tr>
-        <th>
-          ID
-        </th>
+  <div class="row">
+      <div class="col-5">
+          <img src="https://images.unsplash.com/photo-1624274579716-8eeba7da39bb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+          width = "400",
+          height "450" >
+      </div>
+       <div class="col-7">  
+          <table>
+            <tr>
+            
+              <th>
+                Date
+              </th>
+              
+              <th>
+              Daily Card 
+              </th>
+    
+              <th>
+              Details
+              </th>
+            </tr>
 
-        <th>
-          Tarot card
-        </th>
+            <% @the_list.each do |a_daily_spread| %>
+            <tr>
+          
+              <td>
+              <%# <#%= time_ago_in_words(a_daily_spread.created_at) %> 
+                <%#  strftime(%b %d, %Y) %>
+                <%= a_daily_spread.created_at %>
+              </td>
+        
+              <td>
+                <%= a_daily_spread.tarot_card_name %>
+                Need to fix
+              </td>
 
-        <th>
-          User
-        </th>
-
-        <th>
-          Sent
-        </th>
-
-        <th>
-          Created at
-        </th>
-
-        <th>
-          Updated at
-        </th>
-
-        <th>
-        </th>
-      </tr>
-
-      <% @the_list.each do |a_daily_spread| %>
-      <tr>
-        <td>
-          <%= a_daily_spread.id %>
-        </td>
-
-        <td>
-          <%= a_daily_spread.tarot_card_id %>
-        </td>
-
-        <td>
-          <%= a_daily_spread.user_id %>
-        </td>
-
-        <td>
-          <%= a_daily_spread.sent %>
-        </td>
-
-        <td>
-          <%= time_ago_in_words(a_daily_spread.created_at) %> ago
-        </td>
-        <td>
-          <%= time_ago_in_words(a_daily_spread.updated_at) %> ago
-        </td>
-
-        <td>
-          <a href="/daily_spreads/<%= a_daily_spread.id %>">
-            Show details
-          </a>
-        </td>
-      </tr>
-      <% end %>
-    </table>
-  </div>
+              <td>
+                <a href="/daily_spreads/<%= a_daily_spread.id %>">
+                  View your daily card
+                </a>
+              </td>
+            </tr>
+            <% end %>
+          </table>
+        </div>
+      </div>
 </div>
 
 <hr>
