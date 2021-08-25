@@ -38,12 +38,12 @@
               <td>
               <%# <#%= time_ago_in_words(a_daily_spread.created_at) %> 
                 <%#  strftime(%b %d, %Y) %>
-                <%= a_daily_spread.created_at %>
+                <%= a_daily_spread.created_at.strftime("%b %d, %Y") %>
               </td>
         
               <td>
-                <%= a_daily_spread.tarot_card_name %>
-                Need to fix
+                <%= a_daily_spread.tarot_card.name %>
+                
               </td>
 
               <td>

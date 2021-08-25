@@ -1,29 +1,22 @@
 task({ :text => :environment }) do
   
-    #TASK TO SEND A TEXT OF THE DAILY CARD FOR EACH REGISTERED USER
 
-  p "All daily cards count"
-  p DailySpread.count
+# Retrieve your credentials from secure storage
+twilio_sid = ENV.fetch("TWILIO_ACCOUNT_SID")
+twilio_token = ENV.fetch("TWILIO_AUTH_TOKEN")
+twilio_sending_number = ENV.fetch("TWILIO_SENDING_PHONE_NUMBER")
 
-  need_text = DailySpread.where({ :sent => false })
-  
-  p "All texts count"
-  p need_text.count
+# Create an instance of the Twilio Client and authenticate with your API key
+twilio_client = Twilio::REST::Client.new(twilio_sid, twilio_token)
 
-  #Tell to send at 8am each day
+# Craft your SMS as a Hash with three keys
+sms_parameters = {
+  :from => twilio_sending_number,
+  :to => "+13124839251", # Put your own phone number here if you want to see it in action
+  :body => "It's going to rain today — take an umbrella!"
+}
 
-  #TEXT ALERT?
-
-  #Send to User
-
-  #tarot_card.name
-  #tarot_card.description
-  #tarot_card.image
-
-  #SEND SMS to 
-
-  # User.phone_number
-
-
+# Send your SMS!
+twilio_client.api.account.messages.create(sms_parameters)
 
 end

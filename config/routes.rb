@@ -19,10 +19,10 @@ Rails.application.routes.draw do
   
   # UPDATE
   
-  #post("/modify_daily_spread/:path_id", { :controller => "daily_spreads", :action => "update" })
+  post("/modify_daily_spread/:path_id", { :controller => "daily_spreads", :action => "update" })
   
   # DELETE
-  #get("/delete_daily_spread/:path_id", { :controller => "daily_spreads", :action => "destroy" })
+  get("/delete_daily_spread/:path_id", { :controller => "daily_spreads", :action => "destroy" })
 
   #------------------------------
 
