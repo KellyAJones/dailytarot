@@ -54,7 +54,9 @@ TO DO: Need to make each card name a hyperlink to the card page
     <% the_group_of_cards.each do |the_card| %>
 
     <div class="col-3">
+    <a href="/tarot_cards/<%= the_card.id%>">
     <%= the_card.name %>
+    </a>
     </div>
     
      <% end %>
@@ -69,7 +71,9 @@ TO DO: Need to make each card name a hyperlink to the card page
     <% the_group_of_cards.each do |the_card| %>
 
     <div class="col-3">
+    <a href="/tarot_cards/<%= the_card.id%>">
     <%= the_card.name %>
+    </a>
     </div>
     
      <% end %>
