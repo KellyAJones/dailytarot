@@ -6,6 +6,7 @@
 #  daily_spreads_count :integer
 #  email               :string
 #  name                :string
+#  opt_in              :boolean          default(TRUE)
 #  password_digest     :string
 #  phone_number        :string
 #  created_at          :datetime         not null
@@ -14,10 +15,13 @@
 class User < ApplicationRecord
   validates :email, :uniqueness => { :case_sensitive => false }
   validates :email, :presence => true
+  
   has_secure_password
 
   has_many(:daily_spreads, { :dependent => :destroy })
   has_many(:tarot_cards, { :through => :daily_spreads, :source => :tarot_card })
+
+  
 
 end
 

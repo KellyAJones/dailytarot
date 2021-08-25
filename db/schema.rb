@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_25_145502) do
+ActiveRecord::Schema.define(version: 2021_08_25_232842) do
 
   create_table "daily_spreads", force: :cascade do |t|
     t.integer "tarot_card_id"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 2021_08_25_145502) do
     t.integer "daily_spreads_count"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "opt_in", default: true
   end
 
 end
