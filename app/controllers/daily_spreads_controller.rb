@@ -2,7 +2,9 @@ class DailySpreadsController < ApplicationController
   def index
     matching_daily_spreads = DailySpread.all
 
-    @list_of_daily_spreads = matching_daily_spreads.order({ :created_at => :desc })
+    user_list_of_daily_spreads = matching_daily_spreads.where({ :user_id => @current_user.id })
+
+    @the_list = user_list_of_daily_spreads.order({ :created_at => :desc })
 
     render({ :template => "daily_spreads/index.html.erb" })
   end

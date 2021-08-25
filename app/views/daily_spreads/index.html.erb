@@ -1,8 +1,7 @@
 <div>
   <div>
-  <i>  NEED TO FIX: Name should populate correctly </i>
     <h1>
-     <%= User.name %>'s Daily Readings
+     <%= @current_user.name %>'s Daily Readings
     </h1>
   </div>
 </div>
@@ -49,7 +48,7 @@ height "450" >
         </th>
       </tr>
 
-      <% @list_of_daily_spreads.each do |a_daily_spread| %>
+      <% @the_list.each do |a_daily_spread| %>
       <tr>
         <td>
           <%= a_daily_spread.id %>
