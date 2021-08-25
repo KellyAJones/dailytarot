@@ -19,17 +19,17 @@ Rails.application.routes.draw do
   
   # UPDATE
   
-  post("/modify_daily_spread/:path_id", { :controller => "daily_spreads", :action => "update" })
+  #post("/modify_daily_spread/:path_id", { :controller => "daily_spreads", :action => "update" })
   
   # DELETE
-  get("/delete_daily_spread/:path_id", { :controller => "daily_spreads", :action => "destroy" })
+  #get("/delete_daily_spread/:path_id", { :controller => "daily_spreads", :action => "destroy" })
 
   #------------------------------
 
   # Routes for the Tarot card resource:
 
   # CREATE
-  post("/insert_tarot_card", { :controller => "tarot_cards", :action => "create" })
+  #post("/insert_tarot_card", { :controller => "tarot_cards", :action => "create" })
           
   # READ
   get("/tarot_cards", { :controller => "tarot_cards", :action => "index" })
@@ -38,10 +38,10 @@ Rails.application.routes.draw do
   
   # UPDATE
   
-  post("/modify_tarot_card/:path_id", { :controller => "tarot_cards", :action => "update" })
+  #post("/modify_tarot_card/:path_id", { :controller => "tarot_cards", :action => "update" })
   
   # DELETE
-  get("/delete_tarot_card/:path_id", { :controller => "tarot_cards", :action => "destroy" })
+  #get("/delete_tarot_card/:path_id", { :controller => "tarot_cards", :action => "destroy" })
 
   #------------------------------
 
