@@ -43,6 +43,7 @@ class UserAuthenticationController < ApplicationController
     @user.password_confirmation = params.fetch("query_password_confirmation")
     @user.name = params.fetch("query_name")
     @user.phone_number = params.fetch("query_phone_number")
+    @user.daily_spreads_count = params.fetch("query_daily_spreads_count")
 
     save_status = @user.save
 

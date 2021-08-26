@@ -13,18 +13,19 @@ twilio_client = Twilio::REST::Client.new(twilio_sid, twilio_token)
 # Loop on all these people and create daily sample for them, then send based on their credentials
 count = 0
 User.all.where(:opt_in => true).each do |user|
-if count < 1
-  count = count + 1
+ #if count < 1
+  #count = count + 1
+ 
+if daily_spreads.sent = params.fetch("query_sent", true)
 
-sample = TarotCard.all.sample
+  sample = TarotCard.all.sample
 
-# us = UserSpread.new
-# us.user_id = user.id
-# us.tarot_card_id = sample.id
-# us.save 
+  us = DailySpread.new
+  us.user_id = user.id
+  us.tarot_card_id = sample.id
+  us.save 
 
 textbody = "Your card of the day is #{sample.name}. #{sample.description} "
-
 
 # Craft your SMS as a Hash with three keys
 sms_parameters = {
