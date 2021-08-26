@@ -1,12 +1,12 @@
 task({ :text => :environment }) do
   
 
-# Retrieve your credentials from secure storage
+
 twilio_sid = ENV.fetch("TWILIO_ACCOUNT_SID")
 twilio_token = ENV.fetch("TWILIO_AUTH_TOKEN")
 twilio_sending_number = ENV.fetch("TWILIO_SENDING_PHONE_NUMBER")
 
-# Create an instance of the Twilio Client and authenticate with your API key
+
 twilio_client = Twilio::REST::Client.new(twilio_sid, twilio_token)
 
 
